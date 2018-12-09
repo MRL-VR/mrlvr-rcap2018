@@ -139,5 +139,5 @@ rqt --force-discover
 
 ## License
 
-This project is licensed under the Mechatronics Research Laboratory(Qazvin Ismalic Azad University).
+This project is licensed under the Mechatronics Research Laboratory(Qazvin Ismalic Azad University)
 
