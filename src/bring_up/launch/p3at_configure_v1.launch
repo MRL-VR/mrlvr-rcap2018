@@ -1,0 +1,34 @@
+<!-- -->
+<launch>
+
+	<!-- spawning robot -->
+	<arg name="robot_name" default="robot0"/>
+	<arg name="joy_type" default="logitech"/>
+
+	<!-- slam node -->
+	<include file="$(find mrl_navigation_v1)/launch/mrl_slam_gmapping.launch">
+		<arg name="robot_name" value="$(arg robot_name)"/>
+	</include> 
+
+	<!-- navigation -->
+	<include file="$(find mrl_navigation_v1)/launch/mrl_navigation_v1.launch"> 
+		<arg name="robot_name" value="$(arg robot_name)"/>
+	</include> 
+
+	<!--  ****** Teleop *****  -->
+	<node pkg="mrl_teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="$(arg robot_name)_keyboard_teleop"  output="screen" clear_params="true">
+	    <param name="robot_name" value="$(arg robot_name)"/>
+	</node>
+
+	<!-- exploration -->
+	<include file="$(find mrl_exploration)/launch/mrl_explore.launch"> 
+		<arg name="robot_name" value="$(arg robot_name)"/>
+	</include> 
+
+
+
+	<!--  **************** Visualisation ****************
+       <node name="rviz_$(arg robot_name)" pkg="rviz" type="rviz" args="-d $(find bring_up)/rviz/$(arg robot_name)-navigation.rviz"/>
+  	-->
+</launch>
+

@@ -1,0 +1,18 @@
+<library path="lib/libmrl_rqt_dashboard">
+  <class name="mrl_rqt_dashboard/Dashboard" type="mrl_rqt_dashboard::Dashboard" base_class_type="rqt_gui_cpp::Plugin">
+    <description>
+      An example C++ GUI plugin to create a great user interface.
+    </description>
+    <qtgui>
+      
+      <group>
+          <icon type="theme">folder</icon>
+         <label>MRL</label>
+      </group>
+      
+      <label>Dashboard</label>
+      <icon type="theme">system-play</icon>
+      <statustip>Dashboard</statustip>
+    </qtgui>
+  </class>
+</library>
